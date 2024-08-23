@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Sync S3 Bucket
       run: |
-        aws s3 sync ./ s3://rent-husband --delete --cache-control no-cache --exact-timestamps --dryrun
+        aws s3 sync ./ s3://rent-husband --delete --cache-control no-cache --exact-timestamps
 
     - name: Invalidate CloudFront
       run: |
