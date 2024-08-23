@@ -19,7 +19,7 @@ jobs:
     steps:
     - name: Sync S3 Bucket
       run: |
-        aws s3 sync ./ s3://rent-husband --recursive --cache-control no-cache
+        aws s3 sync ./ s3://rent-husband
 
     - name: Invalidate CloudFront
       run: |
