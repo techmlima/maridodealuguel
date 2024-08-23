@@ -20,12 +20,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: List local files
-        run: |
-          echo "Listing files in the project directory:"
-          ls -R ./ > local_files.log
-          cat local_files.log
-
       - name: Sync S3 Bucket
         run: |
           aws s3 sync ./ s3://rent-husband --delete --cache-control no-cache --exact-timestamps
