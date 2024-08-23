@@ -17,17 +17,20 @@ jobs:
       AWS_REGION: ${{ vars.AWS_REGION }}
 
     steps:
-    - name: List local files
-      run: |
-        echo "Listing files in the current directory and subdirectories:"
-        ls -R ./ > local_files.log
-        cat local_files.log
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Sync S3 Bucket
-      run: |
-        aws s3 sync ./ s3://rent-husband --delete --cache-control no-cache --exact-timestamps
+      - name: List local files
+        run: |
+          echo "Listing files in the project directory:"
+          ls -R my-subdirectory > local_files.log
+          cat local_files.log
 
-    - name: Invalidate CloudFront
-      run: |
-        aws cloudfront create-invalidation --distribution-id ${{ vars.CLOUDFRONT_DIST_ID }} --paths "/*"
+      - name: Sync S3 Bucket
+        run: |
+          aws s3 sync ./ s3://rent-husband --delete --cache-control no-cache --exact-timestamps
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ vars.CLOUDFRONT_DIST_ID }} --paths "/*"
       
