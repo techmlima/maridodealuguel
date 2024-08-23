@@ -23,7 +23,7 @@ jobs:
       - name: List local files
         run: |
           echo "Listing files in the project directory:"
-          ls -R my-subdirectory > local_files.log
+          ls -R ./ > local_files.log
           cat local_files.log
 
       - name: Sync S3 Bucket
