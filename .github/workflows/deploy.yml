@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - develop # todo delete it
 
 jobs:
   deploy:
