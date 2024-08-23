@@ -17,6 +17,12 @@ jobs:
       AWS_REGION: ${{ vars.AWS_REGION }}
 
     steps:
+    - name: List local files
+      run: |
+        echo "Listing files in the current directory and subdirectories:"
+        ls -R ./ > local_files.log
+        cat local_files.log
+
     - name: Sync S3 Bucket
       run: |
         aws s3 sync ./ s3://rent-husband --delete --cache-control no-cache --exact-timestamps
