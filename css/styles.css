@@ -74,3 +74,15 @@ footer {
 footer p {
     margin: 0;
 }
+
+.msn-de-contato {
+    font-size: large;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.contato-direto{
+    text-align: center;
+    font-size: x-large;
+
+}
