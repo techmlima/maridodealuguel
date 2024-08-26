@@ -1,0 +1,59 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+*.log
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Generated directories for development
+/.cache
+/dist
+/build
+/public
+
+# Temporary files and folders
+tmp/
+temp/
+
+# IDE or editor specific files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore deployment environment files
+.env
+.env.local
+.env.*.local
+
+# Ignore S3 sync logs
+local_files.log
+sync.log
+
+# Ignore deployment scripts
+deploy.sh
+
+# Ignore GitHub Actions logs
+.github/workflows/*.log
+
+# Ignore specific files that might be generated
+*.bak
+*.swp
+*.tmp
+
+# Ignore macOS specific files
+*.DS_Store
+
+# Ignore Windows specific files
+Desktop.ini
